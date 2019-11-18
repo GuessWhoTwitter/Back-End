@@ -15,9 +15,9 @@ https://backend-guesswho.herokuapp.com/
 | Request Type  |	Endpoint            |	        Description     |
 | ------------  |  --------------       |       ------------------  | 
 | POST	        |    /api/auth/register	|           Creates User    |
-| POST	        |    /api/auth/login	|           Creates Session |
+| POST	        |    /api/auth/login	|           Creates JTW*    |
 
-*Sessions and Cookies Used to Verify Users
+*JSON Web Tokens Used to Verify Users
 
 # Data Models
 
@@ -55,4 +55,4 @@ A POST request to the api/auth/login endpoint expects to recieve an object as fo
 | username	| String	| true	    | N/A   |
 | password	| String	| true	    | N/A  |
 
-NOTE: If successful, a session will be returned. This must be stored and used as authentication for API calls to users or messages endpoints.
+**NOTE**: If successful, a JSON Web Token will be returned. This must be stored and used as authentication for API calls to users endpoints.
