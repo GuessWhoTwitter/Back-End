@@ -12,9 +12,10 @@ https://backend-guesswho.herokuapp.com/
 
 # Authentication
 
-Request Type	Endpoint	        Description
-POST	        /api/auth/register	Creates User
-POST	        /api/auth/login	    Creates Session
+| Request Type  |	Endpoint            |	        Description     |
+| ------------  |  --------------       |       ------------------  | 
+| POST	        |    /api/auth/register	|           Creates User    |
+| POST	        |    /api/auth/login	|           Creates Session |
 
 *Sessions and Cookies Used to Verify Users
 
@@ -26,22 +27,24 @@ Register
 
 A POST request to the /api/auth/register endpoint expects to recieve an object as follows:
 
-{
+```{
     "username": "CodingGenius",
     "password": "coderules"
-}
+}```
 
-Field	    Type	    Required	Unique
-username	String	    true	    true
-password	String	    true	    false
+| Field	    | Type	    | Required	| Unique |
+|---------  |---------  |---------- |--------|    
+| username	| String	| true	    | true   |
+| password	| String	| true	    | false  |
 
 # Login
 
 A POST request to the api/auth/login endpoint expects to recieve an object as follows:
-{
+
+```{
     "username": "CodingGenius",
     "password": "coderules"
-}
+}```
 
 Field	    Type	    Required	Unique
 username	String	    true	    N/A
