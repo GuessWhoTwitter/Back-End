@@ -23,31 +23,32 @@ https://backend-guesswho.herokuapp.com/
 
 # Authentication
 
-Register
+**Register**
 
 A POST request to the /api/auth/register endpoint expects to recieve an object as follows:
 
-```{
+{
     "username": "CodingGenius",
     "password": "coderules"
-}```
+}
 
 | Field	    | Type	    | Required	| Unique |
 |---------  |---------  |---------- |--------|    
 | username	| String	| true	    | true   |
 | password	| String	| true	    | false  |
 
-# Login
+**Login**
 
 A POST request to the api/auth/login endpoint expects to recieve an object as follows:
 
-```{
+{
     "username": "CodingGenius",
     "password": "coderules"
-}```
+}
 
-Field	    Type	    Required	Unique
-username	String	    true	    N/A
-password	String	    true	    N/A
+| Field	    | Type	    | Required	| Unique |
+|---------  |---------  |---------- |--------|    
+| username	| String	| true	    | N/A   |
+| password	| String	| true	    | N/A  |
 
 NOTE: If successful, a session will be returned. This must be stored and used as authentication for API calls to users or messages endpoints.
