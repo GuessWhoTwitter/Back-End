@@ -2,9 +2,9 @@
 Node.js server with SQL database
 
 # Overview
-This API is used as part of the application Safe Space and allows for CRUD operations to be performed on both on the application's users and messages.
+This API is used as part of the application Guess Who and allows for CRUD operations to be performed on both on the application's users.
 
-This documentation will cover all of the data models and endpoints which can be access via
+This documentation will cover all of the data models and endpoints which can be access via:
 
 https://backend-guesswho.herokuapp.com/
 
