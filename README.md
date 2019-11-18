@@ -27,10 +27,12 @@ https://backend-guesswho.herokuapp.com/
 
 A POST request to the /api/auth/register endpoint expects to recieve an object as follows:
 
+```
 {
     "username": "CodingGenius",
     "password": "coderules"
 }
+```
 
 | Field	    | Type	    | Required	| Unique |
 |---------  |---------  |---------- |--------|    
