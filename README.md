@@ -43,10 +43,12 @@ A POST request to the /api/auth/register endpoint expects to recieve an object a
 
 A POST request to the api/auth/login endpoint expects to recieve an object as follows:
 
+```
 {
     "username": "CodingGenius",
     "password": "coderules"
 }
+```
 
 | Field	    | Type	    | Required	| Unique |
 |---------  |---------  |---------- |--------|    
