@@ -1,22 +1,50 @@
 # Back-End
 Node.js server with SQL database
 
-# Introduction
-What does your API do? This API is being created for the purpose of using in conjuction with a twitter API to create a multi level game. My api will hold the register & login endpoints and hold users information. Also, I will create endpoints to access different levels within the game.
-
 # Overview
-Things that the developers should know about
+This API is used as part of the application Safe Space and allows for CRUD operations to be performed on both on the application's users and messages.
+
+This documentation will cover all of the data models and endpoints which can be access via
+
+https://backend-guesswho.herokuapp.com/
+
+# Endpoints
 
 # Authentication
-What is the preferred way of using the API?
 
-# Error Codes
-What errors and status codes can a user expect? 201, 401, 500
+Request Type	Endpoint	        Description
+POST	        /api/auth/register	Creates User
+POST	        /api/auth/login	    Creates Session
 
-# Rate limit
-Is there a limit to the number of requests an user can send? No
+*Sessions and Cookies Used to Verify Users
 
-# Language
-POST http://localhost:5000/api/auth/register
+# Data Models
 
-POST http://localhost:5000/api/auth/login
+# Authentication
+
+Register
+
+A POST request to the /api/auth/register endpoint expects to recieve an object as follows:
+
+{
+    "username": "CodingGenius",
+    "password": "coderules"
+}
+
+Field	    Type	    Required	Unique
+username	String	    true	    true
+password	String	    true	    false
+
+# Login
+
+A POST request to the api/auth/login endpoint expects to recieve an object as follows:
+{
+    "username": "CodingGenius",
+    "password": "coderules"
+}
+
+Field	    Type	    Required	Unique
+username	String	    true	    N/A
+password	String	    true	    N/A
+
+NOTE: If successful, a session will be returned. This must be stored and used as authentication for API calls to users or messages endpoints.
