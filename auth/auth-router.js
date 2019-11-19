@@ -87,7 +87,7 @@ router.get('/photos', (req, res) => {
 })
 
 router.get('/tweets/:id', (req, res) => {
-  const id = req.params.id;
+  const {id} = req.params;
   Users.findTweetsById(id)
   .then(tweet => {
       res.status(200).json(tweet);
