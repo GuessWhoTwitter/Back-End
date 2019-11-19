@@ -6,6 +6,11 @@ module.exports = {
   findBy,
   findById,
   findByLevel,
+  findTweets,
+  findPhotos,
+  findTweetsById,
+  findPhotosById
+
 };
 
 function find() {
@@ -37,5 +42,25 @@ function findByLevel(level) {
       .select('level', 'username')
       .where({ level })
       .first();
+  }
+
+  function findTweets() {
+    return db('twitter_users');
+  }
+
+  function findPhotos() {
+    return db('photo');
+  }
+
+  function findTweetsById() {
+    return db('twitter_users')
+    .where({ id })
+    .first();
+  }
+
+  function findPhotosById() {
+    return db('photo')
+    .where({ id })
+    .first();
   }
 
