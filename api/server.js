@@ -3,7 +3,8 @@ const helmet = require('helmet');
 const cors = require('cors');
 
 const authRouter = require('../auth/auth-router');
-const twitterRouter = require('../twitter/twitter-router');
+const { twitterRouter, photoArray } = require('../twitter/twitter-router');
+console.log(photoArray);
 
 const server = express();
 
