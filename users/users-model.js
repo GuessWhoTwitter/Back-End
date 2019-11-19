@@ -54,6 +54,7 @@ function findByLevel(level) {
 
   function findTweetsById() {
     return db('twitter_users')
+    .select('id', 'tweet')
     .where({ id })
     .first();
   }

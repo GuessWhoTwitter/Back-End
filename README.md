@@ -12,10 +12,13 @@ https://backend-guesswho.herokuapp.com/
 
 # Authentication
 
-| Request Type  |	Endpoint            |	        Description     |
+| Request Type  |	Endpoints           |	        Description     |
 | ------------  |  --------------       |       ------------------  | 
 | POST	        |    /api/auth/register	|           Creates User    |
 | POST	        |    /api/auth/login	|           Creates JTW*    |
+| GET	        |    /api/auth/tweets	|           Gets All Tweets |
+| GET	        |    /api/auth/photos	|           Gets All Photos |
+
 
 *JSON Web Tokens Used to Verify Users
 
