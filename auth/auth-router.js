@@ -69,6 +69,41 @@ function getJwtToken(username) {
   return jwt.sign(payload, secret, options);
 }
 
+
+router.get('/tweets', (req, res) => {
+  Users.findTweets()
+  .then(tweets => {
+      res.status(200).json(tweets);
+  })
+  .catch(err => res.status(500).json({ error: err }));
+})
+
+router.get('/photos', (req, res) => {
+  Users.findPhotos()
+  .then(photos => {
+      res.status(200).json(photos);
+  })
+  .catch(err => res.status(500).json({ error: err }));
+})
+
+router.get('/tweets/:id', (req, res) => {
+  const id = req.params.id;
+  Users.findTweetsById(id)
+  .then(tweet => {
+      res.status(200).json(tweet);
+  })
+  .catch(err => res.status(500).json({ error: err }));
+})
+
+router.get('/photos/:id', (req, res) => {
+  const id = req.params.id;
+  Project.findPhotosById(id)
+  .then(photo => {
+      res.status(200).json(photo);
+  })
+  .catch(err => res.status(500).json({ error: err }));
+})
+
 module.exports = router;
 
 
