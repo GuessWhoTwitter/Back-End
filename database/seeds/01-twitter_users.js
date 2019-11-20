@@ -8,7 +8,7 @@ exports.seed = function(knex) {
       return knex('twitter_users').insert([
         {id: 1, tweet: 'I hid a bone in the backyard!'},
         {id: 2, tweet: 'I pooped on the rug.'},
-        {id: 3, tweet: 'I like eat to human food.'},
+        {id: 3, tweet: 'I like to eat human food.'},
         {id: 4, tweet: 'I hate the dog park.'},
         {id: 5, tweet: 'I love belly rubs.'},
         {id: 6, tweet: 'I dream of doggy treats!'},
