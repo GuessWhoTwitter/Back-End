@@ -104,6 +104,16 @@ router.get('/photos/:id', (req, res) => {
   .catch(err => res.status(500).json({ error: err }));
 })
 
+router.get('/users', (req, res) => {
+  Users.find()
+    .then(users => {
+      res.json(users);
+    })
+    .catch(err => res.send(err));
+})
+
+
+
 module.exports = router;
 
 
