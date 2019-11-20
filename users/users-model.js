@@ -2,6 +2,8 @@ const db = require('../database/dbConfig');
 
 module.exports = {
   add,
+  update,
+  remove,
   find,
   findBy,
   findById,
@@ -32,9 +34,21 @@ function add(user) {
 
 function findById(id) {
   return db('users')
-    .select('id', 'username')
     .where({ id })
     .first();
+}
+
+
+function remove(id) {
+  return db('users')
+    .where({ id })
+    .del();
+}
+
+function update(id, username) {
+  return db('users')
+    .where({ id })
+    .update(username);
 }
 
 function findByLevel(level) {
@@ -52,16 +66,17 @@ function findByLevel(level) {
     return db('photo');
   }
 
-  function findTweetsById() {
+  function findTweetsById(id) {
     return db('twitter_users')
-    .select('id', 'tweet')
     .where({ id })
     .first();
   }
 
-  function findPhotosById() {
+  function findPhotosById(id) {
     return db('photo')
     .where({ id })
     .first();
   }
+
+
 
