@@ -18,6 +18,7 @@ https://backend-guesswho.herokuapp.com/
 | POST	        |    /api/auth/login	|           Creates JTW*    |
 | GET	        |    /api/auth/tweets	|           Gets All Tweets |
 | GET	        |    /api/auth/photos	|           Gets All Photos |
+| GET	        |    /api/auth/users	|           Gets All Users  |
 
 
 *JSON Web Tokens Used to Verify Users
