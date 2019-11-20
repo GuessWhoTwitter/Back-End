@@ -16,12 +16,26 @@ https://backend-guesswho.herokuapp.com/
 | ------------  |  --------------       |       ------------------  | 
 | POST	        |    /api/auth/register	|           Creates User    |
 | POST	        |    /api/auth/login	|           Creates JTW*    |
-| GET	        |    /api/auth/tweets	|           Gets All Tweets |
-| GET	        |    /api/auth/photos	|           Gets All Photos |
-| GET	        |    /api/auth/users	|           Gets All Users  |
-
 
 *JSON Web Tokens Used to Verify Users
+
+# Tweets & Photos
+
+| Request Type  |	Endpoints               |	        Description           |
+| ------------  |  --------------           |       ------------------        | 
+| GET	        |    /api/auth/tweets	    |           Returns All Tweets    |
+| GET	        |    /api/auth/photos	    |           Returns All Photos    |
+| GET	        |    /api/auth/tweets/:id   |           Returns Tweets by Id  |
+| GET	        |    /api/auth/photos/:id	|           Returns Photos by Id  |
+
+# Users
+
+| Request Type  |	Endpoints               |	        Description     |
+| ------------  |  --------------           |       ------------------  | 
+| GET	        |    /api/auth/users	    |   Returns All Users       |
+| GET	        |    /api/auth/users/:id	|   Returns Users by Id     |
+| PUT	        |    /api/auth/users/:id	|   Updates User's Username |
+| DELETE	    |    /api/auth/users/:id	|   Removes User by Id      |
 
 # Data Models
 

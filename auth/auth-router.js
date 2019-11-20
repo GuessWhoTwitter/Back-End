@@ -97,7 +97,7 @@ router.get('/tweets/:id', (req, res) => {
 
 router.get('/photos/:id', (req, res) => {
   const id = req.params.id;
-  Project.findPhotosById(id)
+  Users.findPhotosById(id)
   .then(photo => {
       res.status(200).json(photo);
   })
@@ -112,6 +112,50 @@ router.get('/users', (req, res) => {
     .catch(err => res.send(err));
 })
 
+router.get('/users/:id', (req, res) => {
+  const id = req.params.id;
+  Users.findPhotosById(id)
+  .then(user => {
+      res.status(200).json(user);
+  })
+  .catch(err => res.status(500).json({ error: err }));
+})
+
+router.delete('/users/:id', (req, res) => {
+  Users.remove(req.params.id)
+  .then(count => {
+    if (count > 0) {
+      res.status(200).json({ message: 'The user has been deleted' });
+    } else {
+      res.status(404).json({ message: 'The user could not be found' });
+    }
+  })
+  .catch(error => {
+    console.log(error);
+    res.status(500).json({
+      message: 'Error removing the user',
+    });
+  });
+});
+
+
+router.put('/users/:id', (req, res) => {
+  const username = req.body;
+  Users.update(req.params.id, username)
+  .then(user => {
+    if (user) {
+      res.status(200).json(user);
+    } else {
+      res.status(404).json({ message: 'The user could not be found' });
+    }
+  })
+  .catch(error => {
+    console.log(error);
+    res.status(500).json({
+      message: 'Error updating the user',
+    });
+  });
+});
 
 
 module.exports = router;
@@ -120,46 +164,3 @@ module.exports = router;
 
 
 
-
-// const bcrypt = require('bcryptjs');
-// const router = require('express').Router();
-
-// const Users = require('./auth-model');
-
-// router.post('/register', (req, res) => {
-//   // implement registration
-//   let userInformation = req.body;
-
-//   const hash = bcrypt.hashSync(userInformation.password, 12);
-//   userInformation.password = hash;
-
-//   Users.add(userInformation)
-//     .then(saved => {
-//       req.session.user = saved.user;
-//       res.status(201).json(saved);
-//     })
-//     .catch(error => {
-//       res.status(500).json(error);
-//     });
-// });
-
-// router.post('/login', (req, res) => {
-//   // implement login
-//   let { username, password } = req.body;
-
-//   Users.findBy({ username })
-//     .first()
-//     .then(user => {
-//       if (user && bcrypt.compareSync(password, user.password)) {
-//         req.session.user = user;
-//       res.status(200).json({ message: `Welcome ${user.username}!` });
-//       } else {
-//         res.status(401).json({ message: 'Invalid Credentials' });
-//       }
-//     })
-//     .catch(error => {
-//       res.status(500).json(error);
-//     });
-// });
-
-// module.exports = router;
