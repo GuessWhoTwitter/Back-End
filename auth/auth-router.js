@@ -63,7 +63,7 @@ function getJwtToken(username) {
   const secret = process.env.JWT_SECRET || "is it secret, is it safe?";
 
   const options = {
-    expiresIn: "1d"
+    expiresIn: "7d"
   };
 
   return jwt.sign(payload, secret, options);
@@ -156,6 +156,29 @@ router.put('/users/:id', (req, res) => {
     });
   });
 });
+
+
+router.put('/users/scores/:id', (req, res) => {
+  const score = req.body;
+  Users.updateScore(req.params.id, score)
+  .then(score => {
+    if (score) {
+      res.status(200).json(score);
+    } else {
+      res.status(404).json({ message: 'The user could not be found to update score' });
+    }
+  })
+  .catch(error => {
+    console.log(error);
+    res.status(500).json({
+      message: 'Error updating the score',
+    });
+  });
+});
+
+
+
+
 
 
 module.exports = router;
