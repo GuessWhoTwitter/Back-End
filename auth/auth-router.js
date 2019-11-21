@@ -116,7 +116,7 @@ router.get('/users', (req, res) => {
 
 router.get('/users/:id', (req, res) => {
   const id = req.params.id;
-  Users.findPhotosById(id)
+  Users.findById(id)
   .then(user => {
       res.status(200).json(user);
   })
