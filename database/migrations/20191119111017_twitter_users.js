@@ -3,10 +3,6 @@ exports.up = function(knex) {
         
      tbl.increments();
 
-    //  tbl
-    // .integer('tweet_id')
-    // .unique()
-    // .notNullable();
 
     tbl.string('tweet', 280).notNullable();
      

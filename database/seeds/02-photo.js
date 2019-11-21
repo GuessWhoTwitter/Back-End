@@ -17,5 +17,6 @@ exports.seed = function(knex) {
         {id: 7, twitter_user_id: 7, pic: "https://random.dog/29152151-f563-45c6-984a-e0fdba531729.jpg"},
         {id: 8, twitter_user_id: 8, pic: "https://random.dog/f886b15c-69d6-4840-bfe9-fd8442dcb516.jpg"},
       ]);
-    });
-}
+      });
+    }
+    

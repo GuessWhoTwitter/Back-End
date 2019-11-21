@@ -3,6 +3,10 @@ const db = require('../database/dbConfig');
 module.exports = {
   add,
   update,
+  addScore,
+  updateScore,
+  findScoresById,
+  findScores,
   remove,
   find,
   findBy,
@@ -16,7 +20,7 @@ module.exports = {
 };
 
 function find() {
-  return db('users').select('id', 'username');
+  return db('users').select('id', 'username', 'score');
 }
 
 function findBy(filter) {
@@ -51,6 +55,7 @@ function update(id, username) {
     .update(username);
 }
 
+
 function findByLevel(level) {
     return db('users')
       .select('level', 'username')
@@ -76,6 +81,34 @@ function findByLevel(level) {
     return db('photo')
     .where({ id })
     .first();
+  }
+
+  function addScore(score) {
+    return db('score')
+      .insert(score, 'id')
+      .then(ids => {
+        const [id] = ids;
+        return findById(id);
+      });
+  }
+
+  function updateScore(id, score) {
+    return db('users')
+      .where({ id })
+      .update(score);
+  }
+  
+
+  function findScoresById(id) {
+    return db('score')
+    .where({ id })
+    .first();
+  }
+
+
+  function findScores() {
+    return db('score')
+    .select('id', 'username', 'score');
   }
 
 

@@ -30,12 +30,13 @@ https://backend-guesswho.herokuapp.com/
 
 # Users
 
-| Request Type  |	Endpoints               |	        Description     |
-| ------------  |  --------------           |       ------------------  | 
-| GET	        |    /api/auth/users	    |   Returns All Users       |
-| GET	        |    /api/auth/users/:id	|   Returns Users by Id     |
-| PUT	        |    /api/auth/users/:id	|   Updates User's Username |
-| DELETE	    |    /api/auth/users/:id	|   Removes User by Id      |
+| Request Type  |	Endpoints                   |	        Description     |
+| ------------  |  --------------               |       ------------------  | 
+| GET	        |    /api/auth/users	        |   Returns All Users       |
+| GET	        |    /api/auth/users/:id	    |   Returns Users by Id     |
+| PUT	        |    /api/auth/users/:id	    |   Updates User's Username |
+| PUT	        |    /api/auth/users/scores/:id	|   Updates User's Score    |
+| DELETE	    |    /api/auth/users/:id	    |   Removes User by Id      |
 
 # Data Models
 
